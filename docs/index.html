@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen: Els animals</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            background-color: #a2d9ce;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .question-card {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            border-left: 5px solid #3498db;
+        }
+        .question-title {
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background 0.2s;
+        }
+        label:hover {
+            background-color: #f1f9ff;
+        }
+        input[type="radio"] {
+            margin-right: 10px;
+            transform: scale(1.2);
+        }
+        button {
+            display: block;
+            width: 100%;
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            padding: 15px;
+            font-size: 1.2em;
+            font-weight: bold;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background-color: #219a52;
+        }
+        #result-container {
+            display: none;
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .score {
+            font-size: 2em;
+            font-weight: bold;
+            color: #2980b9;
+        }
+        .feedback {
+            margin-top: 15px;
+            text-align: left;
+        }
+        .correct {
+            color: #27ae60;
+            font-weight: bold;
+        }
+        .incorrect {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>📝 Examen de Ciències: Els animals</h1>
+    <p style="text-align: center;">Llegeix amb atenció cada pregunta i tria la resposta correcta.</p>
+
+    <form id="quiz-form">
+        <!-- Pregunta 1 -->
+        <div class="question-card">
+            <div class="question-title">1. Quines són les tres funcions vitals dels animals?</div>
+            <label><input type="radio" name="q1" value="a"> Menjar, dormir i jugar.</label>
+            <label><input type="radio" name="q1" value="b"> Nutrició, relació i reproducció.</label>
+            <label><input type="radio" name="q1" value="c"> Respirar, caminar i créixer.</label>
+        </div>
+
+        <!-- Pregunta 2 -->
+        <div class="question-card">
+            <div class="question-title">2. Quina característica comuna tenen tots els animals vertebrats?</div>
+            <label><input type="radio" name="q2" value="a"> Un esquelet intern format per ossos amb una columna vertebral.</label>
+            <label><input type="radio" name="q2" value="b"> Sis potes i dues antenes.</label>
+            <label><input type="radio" name="q2" value="c"> El cos cobert d'escates.</label>
+        </div>
+
+        <!-- Pregunta 3 -->
+        <div class="question-card">
+            <div class="question-title">3. Com prenen l'oxigen de l'aigua els animals que hi viuen, com ara els peixos?</div>
+            <label><input type="radio" name="q3" value="a"> Mitjançant els pulmons.</label>
+            <label><input type="radio" name="q3" value="b"> Mitjançant la pell nua.</label>
+            <label><input type="radio" name="q3" value="c"> Mitjançant les brànquies.</label>
+        </div>
+
+        <!-- Pregunta 4 -->
+        <div class="question-card">
+            <div class="question-title">4. Segons l'alimentació, els animals omnívors són aquells que...</div>
+            <label><input type="radio" name="q4" value="a"> S'alimenten de plantes.</label>
+            <label><input type="radio" name="q4" value="b"> S'alimenten d'altres animals.</label>
+            <label><input type="radio" name="q4" value="c"> S'alimenten tant de plantes com d'altres animals.</label>
+        </div>
+
+        <!-- Pregunta 5 -->
+        <div class="question-card">
+            <div class="question-title">5. En quines tres parts es distingeix el cos dels vertebrats?</div>
+            <label><input type="radio" name="q5" value="a"> Cap, tronc i extremitats.</label>
+            <label><input type="radio" name="q5" value="b"> Cap, tronc i cua.</label>
+            <label><input type="radio" name="q5" value="c"> Cap, tòrax i abdomen.</label>
+        </div>
+
+        <!-- Pregunta 6 -->
+        <div class="question-card">
+            <div class="question-title">6. La majoria dels mamífers són vivípars. Quin és l'únic mamífer que pon ous?</div>
+            <label><input type="radio" name="q6" value="a"> La balena.</label>
+            <label><input type="radio" name="q6" value="b"> La ratapinyada.</label>
+            <label><input type="radio" name="q6" value="c"> L'ornitorrinc.</label>
+        </div>
+
+        <!-- Pregunta 7 -->
+        <div class="question-card">
+            <div class="question-title">7. Què tenen en comú els amfibis i els peixos pel que fa a la reproducció?</div>
+            <label><input type="radio" name="q7" value="a"> Tots dos són ovípars i ponen els ous a l'aigua.</label>
+            <label><input type="radio" name="q7" value="b"> Tots dos tenen les cries al ventre de la mare.</label>
+            <label><input type="radio" name="q7" value="c"> Tots dos cuiden els ous fins que neixen les cries.</label>
+        </div>
+
+        <!-- Pregunta 8 -->
+        <div class="question-card">
+            <div class="question-title">8. Com és el cos dels ocells?</div>
+            <label><input type="radio" name="q8" value="a"> Tenen la pell coberta de pèl i quatre potes.</label>
+            <label><input type="radio" name="q8" value="b"> Tenen el cos cobert d'escates i una cua llarga.</label>
+            <label><input type="radio" name="q8" value="c"> Tenen dues ales, dues potes, el cos cobert de plomes i un bec dur.</label>
+        </div>
+
+        <!-- Pregunta 9 -->
+        <div class="question-card">
+            <div class="question-title">9. En quines tres parts tenen dividit el cos els insectes?</div>
+            <label><input type="radio" name="q9" value="a"> Cap, tronc i cua.</label>
+            <label><input type="radio" name="q9" value="b"> Cap, tòrax i abdomen.</label>
+            <label><input type="radio" name="q9" value="c"> Cap, tronc i extremitats.</label>
+        </div>
+
+        <!-- Pregunta 10 -->
+        <div class="question-card">
+            <div class="question-title">10. Quantes potes presenten els insectes?</div>
+            <label><input type="radio" name="q10" value="a"> Quatre potes.</label>
+            <label><input type="radio" name="q10" value="b"> Sis potes.</label>
+            <label><input type="radio" name="q10" value="c"> Vuit potes.</label>
+        </div>
+
+        <button type="button" onclick="corregirExamen()">Corregir l'examen</button>
+    </form>
+
+    <div id="result-container">
+        <h2>Resultat Final</h2>
+        <div class="score" id="score-display"></div>
+        <div class="feedback" id="feedback-display"></div>
+    </div>
+
+    <script>
+        const respCorrectes = {
+            q1: 'b', q2: 'a', q3: 'c', q4: 'c', q5: 'b',
+            q6: 'c', q7: 'a', q8: 'c', q9: 'b', q10: 'b'
+        };
+
+        const explicacions = {
+            q1: "Mitjançant les funcions vitals (nutrició, relació i reproducció) els animals obtenen energia, reben informació de l'entorn i tenen cries.[cite: 3, 4]",
+            q2: "Els vertebrats tenen una característica comuna: un esquelet intern format per ossos amb una columna vertebral.[cite: 5]",
+            q3: "Prenen l'oxigen de l'aigua mitjançant les brànquies, unes petites làmines que estan en contacte amb l'aigua.[cite: 3, 8]",
+            q4: "Els omnívors s'alimenten tant de plantes com d'altres animals.[cite: 3]",
+            q5: "El cos dels vertebrats es distingeix en cap, tronc i cua.[cite: 5]",
+            q6: "L'ornitorrinc és l'únic mamífer que pon ous.[cite: 6]",
+            q7: "Tots dos són ovípars, ponen els ous a l'aigua i no acostumen a cuidar-los.[cite: 8]",
+            q8: "El cos el tenen cobert de plomes, tenen dues ales, dues potes i un bec dur.[cite: 7]",
+            q9: "Tots els insectes tenen el cos dividit en tres parts: cap, tòrax i abdomen.[cite: 9]",
+            q10: "Els insectes presenten sis potes (i molts tenen dues o quatre ales i dues antenes).[cite: 9]"
+        };
+
+        function corregirExamen() {
+            let puntuacio = 0;
+            let feedbackHTML = '<h3>Repàs de les teves respostes:</h3><ul>';
+            const form = document.getElementById('quiz-form');
+
+            for (let i = 1; i <= 10; i++) {
+                const pregunta = 'q' + i;
+                const opcions = form.elements[pregunta];
+                let respost = false;
+                let valorResposta = '';
+
+                for (let j = 0; j < opcions.length; j++) {
+                    if (opcions[j].checked) {
+                        respost = true;
+                        valorResposta = opcions[j].value;
+                        break;
+                    }
+                }
+
+                if (!respost) {
+                    alert('Ep! T\'has oblidat de respondre la pregunta ' + i + '. Revisa-ho abans de lliurar.');
+                    return;
+                }
+
+                if (valorResposta === respCorrectes[pregunta]) {
+                    puntuacio++;
+                    feedbackHTML += `<li class="correct">Pregunta ${i}: Correcte! ${explicacions[pregunta]}</li>`;
+                } else {
+                    feedbackHTML += `<li class="incorrect">Pregunta ${i}: Incorrecte. ${explicacions[pregunta]}</li>`;
+                }
+            }
+
+            feedbackHTML += '</ul>';
+            
+            document.getElementById('quiz-form').style.display = 'none';
+            const resultContainer = document.getElementById('result-container');
+            const scoreDisplay = document.getElementById('score-display');
+            const feedbackDisplay = document.getElementById('feedback-display');
+
+            resultContainer.style.display = 'block';
+            scoreDisplay.textContent = `La teva nota és: ${puntuacio} / 10`;
+            
+            if(puntuacio === 10) {
+                scoreDisplay.style.color = '#27ae60';
+                scoreDisplay.innerHTML += ' 🌟 Excel·lent!';
+            } else if (puntuacio >= 5) {
+                scoreDisplay.style.color = '#f39c12';
+                scoreDisplay.innerHTML += ' 👍 Aprovat, bona feina!';
+            } else {
+                scoreDisplay.style.color = '#e74c3c';
+                scoreDisplay.innerHTML += ' 📚 Cal repassar una mica més!';
+            }
+
+            feedbackDisplay.innerHTML = feedbackHTML;
+            window.scrollTo(0, 0);
+        }
+    </script>
+</body>
+</html>
